@@ -1,0 +1,5 @@
+provider "google" {
+credentials = "${file("../credentials/google-a09d559458c0.json")}"
+project     = "${var.var_project}"
+region      = "${var.var_project_region}"
+}
