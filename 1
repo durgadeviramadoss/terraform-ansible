@@ -1,0 +1,24 @@
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: all
+  vars:
+    project_dir: /home/karthick/terraform-files
+  name: "Execute terraform plan"
+  tasks: 
+    - 
+      terraform: 
+        project_path: '{{ project_dir }}'
+        state: planned
+        plan_file: ""
+        variables_file: "/home/karthick/terraform-files/terraform.tfvars"
+        variables:
+          var_project_region: "us-east4"
+        force_init: true
+        backend_config:
+          backend: "gcs"
+          region: "us-east1"
+          bucket: "tf-state-store-backend"
+          key: "tf-state-store/default.tfstate"
+

@@ -1,0 +1,19 @@
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: all
+  vars:
+    project_dir: /home/karthick/terraform-files
+  name: "Create terraform resource"
+  tasks: 
+    - 
+      terraform: 
+        project_path: '{{ project_dir }}'
+        state: present
+        force_init: true
+        backend_config:
+          bucket: "tf-state-store-backend"
+          prefix: "tf-state-store"
+          credentials: "/home/karthick/credentials/gcs-e10aec265420.json"
+
