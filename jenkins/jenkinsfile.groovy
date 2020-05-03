@@ -3,7 +3,7 @@ pipeline {
     parameters {
 		choice(
             choices: 'ansible-tf-plan\nansible-tf-apply\nansible-tf-destory',
-            description: 'Terraform Executiomn type'
+            description: 'Terraform Executiomn type',
             name: 'REQUESTED_ACTION')
     }
 	environment {
