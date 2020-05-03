@@ -4,7 +4,7 @@
   gather_facts: false
   hosts: all
   vars:
-    project_dir: /home/karthick/terraform-files
+    project_dir: /var/lib/jenkins/workspace/terraform-ansible
   name: "Destory terraform resources"
   tasks: 
     - 
