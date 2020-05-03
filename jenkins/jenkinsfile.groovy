@@ -18,10 +18,10 @@ pipeline {
                 checkout scm
             }
         }
-		stage("shell") {
+		stage("Execute Terraform Plan") {
 			steps{
 				sh '''
-					sed -i 's/
+					ansible-playbook ansible-terraform-exec/verify-resources-tf.yml
 				'''
 			}
 		}
