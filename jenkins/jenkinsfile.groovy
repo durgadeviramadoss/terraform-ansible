@@ -19,7 +19,7 @@ pipeline {
         }
 		stage("shell") {
 			steps{
-				sh "echo "${env.WORKSPACE}""
+				echo "${env.WORKSPACE}"
 			}
 		}
 	}
