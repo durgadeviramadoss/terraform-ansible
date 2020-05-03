@@ -4,7 +4,7 @@
   gather_facts: false
   hosts: all
   vars:
-    project_dir: /home/karthick/terraform-files
+    project_dir: /var/lib/jenkins/workspace/terraform-ansible
   name: "Execute terraform plan"
   tasks: 
     - 
@@ -12,7 +12,7 @@
         project_path: '{{ project_dir }}'
         state: planned
         plan_file: ""
-        variables_file: "/home/karthick/terraform-files/terraform.tfvars"
+        variables_file: "/var/lib/jenkins/workspace/terraform-ansible/terraform.tfvars"
         variables:
           var_project_region: "us-east4"
         force_init: true
