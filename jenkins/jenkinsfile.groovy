@@ -19,7 +19,7 @@ pipeline {
         }
 		stage("shell") {
 			steps{
-				echo $PWD 
+				sh "echo "${env.WORKSPACE}""
 			}
 		}
 	}
