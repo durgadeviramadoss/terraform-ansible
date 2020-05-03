@@ -9,6 +9,7 @@ pipeline {
 	environment {
 		GCP_CRED = credentials('gcp_credentials')
 		GCS_CRED = credentials('gcs_credentials')
+		PROJ_DIR = "${WORKSPACE}"
 	}
 	stages {
         stage("build") {
@@ -19,7 +20,9 @@ pipeline {
         }
 		stage("shell") {
 			steps{
-				echo "${env.WORKSPACE}"
+				sh '''
+					sed -i 's/
+				'''
 			}
 		}
 	}
